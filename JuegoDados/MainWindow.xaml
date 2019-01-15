@@ -1,0 +1,54 @@
+﻿<Window x:Name="mainDados" x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JuegoDados"
+        mc:Ignorable="d"
+        Title="Juego dados" Height="600" Width="1000"
+        Loaded="MainWindow_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="canvasTop" HorizontalAlignment="Left" Height="116" Margin="10,10,0,0" VerticalAlignment="Top" Width="972" Background="#FFB0B0B0" Grid.ColumnSpan="2">
+            <Label Content="Jugador 1:" Canvas.Left="106" Canvas.Top="23"/>
+            <Label Content="Jugador 2:" Canvas.Left="106" Canvas.Top="70"/>
+            <TextBox x:Name="tBxJg1" Height="26" Canvas.Left="216" TextWrapping="Wrap" Text="" Canvas.Top="23" Width="144"/>
+            <TextBox x:Name="tBxJg2" Height="26" Canvas.Left="216" TextWrapping="Wrap" Text="" Canvas.Top="70" Width="144"/>
+            <Label Content="Tiradas:" Canvas.Left="541" Canvas.Top="23"/>
+            <TextBox x:Name="tBxTiradas" Height="33" Canvas.Left="618" TextWrapping="Wrap" Text="" Canvas.Top="23" Width="38" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="btnComenzar" Content="Comenzar" Canvas.Left="523" Canvas.Top="70" Width="133" Height="26" Click="ComenzarClick"/>
+        </Canvas>
+        <Canvas x:Name="canvasBot" HorizontalAlignment="Left" Height="428" Margin="10,131,0,0" VerticalAlignment="Top" Width="972" Grid.ColumnSpan="2" Background="#FF6E6EC1">
+            <Label x:Name="lblMarc1" Content="0" Canvas.Left="165" Canvas.Top="68" Height="100" Width="100" Background="#FFC32323" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="48"/>
+            <Label x:Name="lblMarc2" Content="0" Canvas.Left="691" Canvas.Top="68" Height="100" Width="100" Background="#FFC32323" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="48"/>
+            <Label Content="Marcadores" Canvas.Left="334" Canvas.Top="81" Height="64" Width="290" FontWeight="Bold" FontSize="48" HorizontalContentAlignment="Center"/>
+            <ListBox x:Name="lsvJg1" Height="175" Canvas.Left="165" Canvas.Top="211" Width="100"/>
+            <ListBox x:Name="lsvJg2" Height="175" Canvas.Left="691" Canvas.Top="211" Width="100"/>
+            <Label x:Name="lblJg1" Content="" Canvas.Left="16" Canvas.Top="270" RenderTransformOrigin="0.5,0.5" Height="50" Width="172" VerticalContentAlignment="Center" Background="#FF034DCF" FontSize="18">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="lblJg2" Content="" Canvas.Left="783" Canvas.Top="270" RenderTransformOrigin="0.5,0.5" Width="175" Height="50" VerticalContentAlignment="Center" Background="#FF034DCF" FontSize="18">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Image x:Name="imgDado" Height="90" Canvas.Left="430" Canvas.Top="183" Width="90"/>
+            <Button x:Name="btnTirar" Canvas.Left="382" Canvas.Top="346" Width="200" Height="40" FontSize="22" Click="btnTirar_Click"/>
+        </Canvas>
+    </Grid>
+</Window>
